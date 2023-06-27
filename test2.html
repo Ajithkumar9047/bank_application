@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Page Content</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script >
+    window.onload = function() {
+  // Get the button elements
+  var homeButton = document.getElementById('homeButton');
+  var aboutButton = document.getElementById('aboutButton');
+
+  // Get the content div element
+  var contentDiv = document.getElementById('content');
+
+  // Set the initial content
+  contentDiv.innerHTML = `
+    <h2>Default Home Page Content</h2>
+    <p>This is the content for the home page.</p>
+  `;
+
+  // Add click event listeners to the buttons
+  homeButton.addEventListener('click', function() {
+    // Update the content when homeButton is clicked
+    contentDiv.innerHTML = `
+      <h2>Home Page Content</h2>
+      <p>This is the updated content for the home page.</p>
+    `;
+  });
+
+  aboutButton.addEventListener('click', function() {
+    // Update the content when aboutButton is clicked
+    contentDiv.innerHTML = `
+      <h2>About Page Content</h2>
+      <p>This is the content for the about page.</p>
+    `;
+  });
+};
+
+  </script>
+</head>
+<body>
+  <header>
+    <button id="homeButton">Home Page</button>
+    <div class="dropdown">
+      <button class="dropdown-toggle">Transfer</button>
+      <div class="dropdown-menu">
+        <button id="aboutButton">Wire Transfer</button>
+        
+      </div>
+    </div>
+  </header>
+
+  <div id="content">
+    <h2>Default Home Page Content</h2>
+    <p>This is the content for the home page.</p>
+  </div>
+</body>
+</html>

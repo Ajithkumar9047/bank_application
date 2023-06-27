@@ -1,0 +1,39 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-toggle {
+    background-color: #1411e7;
+    border: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    color: rgba(237, 233, 233, 0.874);
+    padding: 5px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #1411e7;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-menu button {
+    color: rgb(241, 235, 235);
+    padding: 2px 20px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  button {
+    background-color: #1411e7;
+    color: white;
+    padding: 4px 16px;
+  }  
