@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <style>
+    
+    
+    .circle-input {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-top: 10px; /* Adjust the margin-top value as per your needs */
+      border: 2px solid #333; /* Add a border around the circle */
+      margin-left: 20px;
+    }
+  
+    .circle-input input[type="file"] {
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  
+    .circle-input label {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: #ccc;
+      background-size: cover;
+      background-position: center;
+      border: none;
+    }
+    
+    .container {
+      height: 200px;
+      overflow-y: scroll;
+      position: relative;
+    }
+    
+    .frametop {
+      width: 100%;
+      height: 250px;
+      background-color: #87CEEB;
+      position: sticky;
+      top: 0;
+    }
+    .entry-feild {
+      position: absolute;
+      top: 0;
+      left: 400px;
+      right: 0;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 1;
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+      .frametop {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items horizontally */
+        height: auto; /* Adjust height as needed */
+      }
+      
+      .circle-input {
+        margin: 0 auto; /* Center the circle input */
+        margin-bottom: 20px; /* Add spacing between elements */
+      }
+      
+    }
+  </style>
+  <script>
+    // JavaScript to handle image selection and display
+    document.addEventListener("DOMContentLoaded", function() {
+      var input = document.getElementById("image-input");
+      var label = document.querySelector(".circle-input label");
+
+      input.addEventListener("change", function(e) {
+        var file = e.target.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          label.style.backgroundImage = "url(" + e.target.result + ")";
+        };
+
+        reader.readAsDataURL(file);
+      });
+    });
+  </script>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="frametop">
+      <div class="circle-input">
+        <input type="file" id="image-input" accept="image/*" />
+        <label for="image-input"></label>
+      </div>
+    
+      <div class="entry-feild">
+        <div>
+          <br><label for="NAME">Name:</label></br>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div>
+          <br><label for="email">Email:</label></br>
+          <input type="email" id="email" name="email" placeholder="ex:xyz@gmail.com" readonly>
+        </div>
+        <div>
+          <br><label for="mobile">Mobile Number:</label></br>
+          <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="Enter your mobile number" required>
+        </div>
+        <div>
+          <br><label for="date">Date of registration:</label></br>
+          <input type="date" id="date" name="date" readonly >
+        </div>
+      </div>
+
+    <div class="basic">
+
+    </div>
+
+    </div>   
+  </div>
+</body>
+</html>
